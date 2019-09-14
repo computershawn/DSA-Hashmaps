@@ -16,9 +16,9 @@ class HashMap {
 
   set(key, value){
       const loadRatio = (this.length + this._deleted + 1) / this._capacity;
-      if (loadRatio > HashMap.MAX_LOAD_RATIO) {
+       if (loadRatio > HashMap.MAX_LOAD_RATIO) {
           this._resize(this._capacity * HashMap.SIZE_RATIO);
-      }
+       }
       //Find the slot where this key should be in
       const index = this._findSlot(key);
 

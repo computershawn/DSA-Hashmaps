@@ -1,0 +1,22 @@
+1) when retrieving keys "Maiar" and "Hobbit" only the second value entered for the matching key prints. THere is a collision happening and the result is ignoring the first val listed. 
+
+The capacity appears to be 8. when printing all, only 8 show and capacity is stated as 8.
+
+2) out put is 20, 10 whole thing was dumb and poorley written with zero explanation. 
+
+3)  m = 11
+Hashmap via Open Addressing
+00 01 02 03 04 05 06 07 08 09 10
+********************************
+22 88 -- -- 04 15 28 17 59 31 10
+
+
+m = 9
+Hashmap via Separate Chaining
+00 01 02 03 04 05 06 07 08
+**************************
+-- 28 20 12 -- 05 15 -- 17
+   19             33
+   01
+
+4)
