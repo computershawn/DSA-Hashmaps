@@ -1,5 +1,5 @@
 class HashMap {
-  constructor(initialCapacity=8) {
+  constructor(initialCapacity = 8) {
       this.length = 0;
       this._hashTable = [];
       this._capacity = initialCapacity;
@@ -21,6 +21,8 @@ class HashMap {
        }
       //Find the slot where this key should be in
       const index = this._findSlot(key);
+
+      //console.log([key, index])
 
       if(!this._hashTable[index]){
           this.length++;

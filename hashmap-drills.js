@@ -1,26 +1,28 @@
 const HashMap = require('./hashmap')
 
 
-// const main = () => {
-//   let lor = new HashMap()
-//     lor.MAX_LOAD_RATIO = 0.5
-//     lor.SIZE_RATIO = 3
+const main = () => {
+  HashMap.MAX_LOAD_RATIO = 0.5
+  HashMap.SIZE_RATIO = 3
+  let lor = new HashMap()
 
-//     lor.set("Hobbit", "Bilbo")
-//     lor.set("Hobbit", "Frodo")
-//     lor.set("Wizard", "Gandolf")
-//     lor.set("Human", "Aragon")
-//     lor.set("Elf", "Legolas")
-//     lor.set("Maiar", "The Necromancer")
-//     lor.set("Maiar", "Sauron")
-//     lor.set("RingBearer", "Gollum")
-//     lor.set("LadyOfLight", "Galadriel")
-//     lor.set("HalfElven", "Arwen")
-//     // lor.set("Ent", "Treebeard")
+  lor.set("Hobbit", "Bilbo")
+  lor.set("Hobbit", "Frodo")
+  lor.set("Wizard", "Gandolf")
+  lor.set("Human", "Aragon")
+  lor.set("Elf", "Legolas")
+  lor.set("Maiar", "The Necromancer")
+  lor.set("Maiar", "Sauron")
+  lor.set("RingBearer", "Gollum")
+  lor.set("LadyOfLight", "Galadriel")
+  lor.set("HalfElven", "Arwen")
+  lor.set("Ent", "Treebeard")
 
-//   console.log(lor)
-// }
-// main()
+  console.log(lor.get('Hobbit'))
+  console.log(lor.get('Maiar'))
+  //console.log(lor)
+}
+//main()
 
 
 // const WhatDoesThisDo = function(){
@@ -41,15 +43,37 @@ const HashMap = require('./hashmap')
 // WhatDoesThisDo()
 
 
-function removeDuplicates(phrase) {
+const removeDuplicates = (phrase) => {
   let phraseArray = phrase.split("")
-  let stupidDrill = new HashMap()
+  let phraseMap = new HashMap()
+  let word = ''
 
-  phraseArray.forEach((element) => {
-    // stupidDrill.get(i)
-    stupidDrill.set(element, element)
-  });
-  console.log(stupidDrill)
-  
+  phraseArray.forEach((elem) => {
+    try {
+      phraseMap.get(elem)
+    } catch {
+      phraseMap.set(elem, elem)
+      word += elem
+    }
+  })
+
+  console.log(word)
 }
-removeDuplicates("google")
+
+removeDuplicates("google all that you can think of")
+
+const removeDuplicates2 = (phrase) => {
+  let phraseArray = phrase.split('')
+  let word = ''
+  let tempArray = []
+
+  phraseArray.forEach(letter => {
+    if(!tempArray.includes(letter)) {
+      tempArray.push(letter)
+      word += letter
+    }
+  })
+  console.log(word)
+}
+
+removeDuplicates2('google')
